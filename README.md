@@ -2,7 +2,7 @@
 
 Kepler short-course on the fundamentals of microcontroller programming and architecture.
 
-Development of this course is underway; you can follow our progress alternative Friday mornings at 9am CDT at www.tsog.tv. Next stream is 9/13/19.
+Development of this course is underway; you can follow our progress alternating Friday mornings at 9am CDT at www.tsog.tv. Next stream is 9/13/19.
 
 The focus of this course is to teach students how to work with microcontrollers such as the AVR architecture microcontrollers found in Arduino devices. Students who have completed this course should understand the basics of microcontroller architecture and be able to create simple, practical software in a professional programming environment.
 
