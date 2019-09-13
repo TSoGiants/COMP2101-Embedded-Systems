@@ -1,4 +1,4 @@
-# COMP2101-Embedded-Systems
+# COMP2101 Embedded Systems Programming
 
 Kepler short-course on the fundamentals of microcontroller programming and architecture.
 
