@@ -19,17 +19,6 @@ Development of this course is underway; you can follow our progress alternating 
 
 The focus of this course is to teach students how to work with microcontrollers such as the AVR architecture microcontrollers found in Arduino devices. Students who have completed this course should understand the basics of microcontroller architecture and be able to create simple, practical software in a professional programming environment.
 
-### Proposed 8-week schedule
-
-1. General Introduction and Basic Setup
-2. Introduction to Digital Inputs and Outputs
-3. Introduction to Analog Inputs and PWM
-4. Introduction to 7-segment LED Display and Clock Project
-5. Moving the Clock Project to the LCD
-6. Expanding the LCD Project pt. 1
-7. Expanding the LCD Project pt. 2
-8. Expanding the LCD Project pt. 3
-
 ### Week 1: General Introduction and Setup
 
 1. Install the Arduino IDE.
@@ -52,10 +41,31 @@ The focus of this course is to teach students how to work with microcontrollers 
 
 ## Miscellaneous
 
-### Notes from first Standing Meeting (8/30/19)
+### Notes from Standing Meeting (8/30/19)
 
 Discussed the initial lesson in-depth and how it will impact the remainder of the course. Decided to focus on development in Visual Studio Code to allow students to explore the built-in libraries used by the Arduino platform.
 
-### Notes from third Standing Meeting (9/27/19)
+### Notes from Standing Meeting (9/13/19)
 
-We'll plan on using the Elegoo Super Starter Kit UNO R3 (~$36). The kit includes everything needed for an introductory course.
+Discussed an overall project plan for the students to complete throughout the course. Decided that the format of a 3-week mini-project, followed by a longer 5-week project would be applicable to this course. Looked through a number of Arduino starter-kits on Amazon.com, but did not select one that would be the "ideal" fit for the course. Concluded that the course should be written around components available in common kits, rather than trying to find a kit or package that fits a given curriculum.
+
+Mr. Dugie - Evaluate available Arduino kits to find a good match for our course objectives.
+
+Dr. F - Still needs to write up an introduction to microcontrollers based on the previously written slide deck.
+
+### Notes from Standing Meeting (9/27/19)
+
+Dr. F floated the idea of building our own PCB / kit for the course, but Mr. Dugie found a good kit from a reputable manufacturer (Elegoo) that should have the contents, price point, and longevity that we need for this class: https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4 Basing our discussion around this kit, we decided upon the following tentative lesson schedule:
+
+1) General intro to IDE / blink / basics
+2) Digital input (buttons and leds)
+3) Analog input and output (tri color LED and potentiometer)
+4) Setting up the 7 segment display (single digit 0-9)
+5) Two-line LCD display, part 1
+6) Two-line LCD display, part 2
+7) Analog sensors
+8) Digital sensors
+
+Mr. Dugie - Complete writing lesson #1.
+
+Dr. F - Finish introduction to microcontrollers, purchase Elegoo kit, and begin writing lesson #2 based off the SBEE embedded systems worksheets.
