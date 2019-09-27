@@ -16,3 +16,28 @@ Mr. Dugie walked through the setup process to get a simple "Blink" program runni
 Mr. Dugie - Type up process of setting up Visual Studio Code and the Blink program for the lesson 1 worksheet.
 
 Dr. F - Write up an introduction to microcontrollers based on the previously written slide deck.
+
+### Notes from Standing Meeting (9/13/19):
+
+Discussed an overall project plan for the students to complete throughout the course. Decided that the format of a 3-week mini-project, followed by a longer 5-week project would be applicable to this course. Looked through a number of Arduino starter-kits on Amazon.com, but did not select one that would be the "ideal" fit for the course. Concluded that the course should be written around components available in common kits, rather than trying to find a kit or package that fits a given curriculum.
+
+Mr. Dugie - Evaluate available Arduino kits to find a good match for our course objectives.
+
+Dr. F - Still needs to write up an introduction to microcontrollers based on the previously written slide deck.
+
+### Notes from Standing Meeting (9/27/19):
+
+Dr. F floated the idea of building our own PCB / kit for the course, but Mr. Dugie found a good kit from a reputable manufacturer (Elegoo) that should have the contents, price point, and longevity that we need for this class: https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4 Basing our discussion around this kit, we decided upon the following tentative lesson schedule:
+
+1) General intro to IDE / blink / basics
+2) Digital input (buttons and leds)
+3) Analog input and output (tri color LED and potentiometer)
+4) Setting up the 7 segment display (single digit 0-9)
+5) Two-line LCD display, part 1
+6) Two-line LCD display, part 2
+7) Analog sensors
+8) Digital sensors
+
+Mr. Dugie - Complete writing lesson #1.
+
+Dr. F - Finish introduction to microcontrollers, purchase Elegoo kit, and begin writing lesson #2 based off the SBEE embedded systems worksheets.
