@@ -16,7 +16,7 @@ Development of this course is underway; you can follow our progress alternating 
 
 * ~~Type up process of setting up Visual Studio Code and the Blink program for the lesson 1 worksheet.~~
 * ~~Evaluate available Arduino kits to find a good match for our course objectives.~~
-* Complete writing lesson #1.
+* ~~Complete writing lesson #1.~~
 
 ### Dr. F
 
@@ -30,53 +30,88 @@ The focus of this course is to teach students how to work with microcontrollers 
 
 ### Lesson 1: General Introduction and Setup
 
-1. Install the Arduino IDE.
-    1. Take the default install settings and file locations.
-2. Install Visual Studio Code.
-    1. Take the default file locations.
-    2. Be sure to select "Add 'Open with Code' option" whenever it is offered.
-    3. It's convenient but not required to set VSC as the default editor for supported file types.
+1. [Install](https://www.arduino.cc/en/Main/Software) the Arduino IDE and associated support files.
+    1. Get the Windows installer instead of the .zip file or the app.
+    2. In the "Select components to install" menu, the "Create Desktop shortcut" component is optional but all others should be selected.
+    3. Install to the default destination folder.
+2. [Install](https://code.visualstudio.com/Download) Visual Studio Code.
+    1. Accept the license agreement.
+    2. Install to the default destination folder.
+    3. Accept the default start menu folder.
+    4. In the "Additional Tasks" menu, check that the "Open with Code" action will be added to the file context menu and directory context menu, that Code will be registered as an editor for supported file types, and that Code will be added to PATH.
 3. Before making any changes or doing anything too interesting, make sure that your Arduino board works with the Arduino IDE.
     1. Open the Arduino IDE and load the "Blink.ino" example sketch (File > Examples > Basics > Blink).
-    2. Update your build environment to match your specific hardware and active port (Tools > Board and Tools > Port).
-    3. Upload the sketch to the board and see whether the behavior is as expected.
-4. In VSC, install the following extensions:
+    2. Update your build environment to match your specific hardware and active port (Tools > Board and Tools > Port). We are going to be using the Genuino Uno for these projects.
+    3. Upload the sketch (Ctrl + u) to the board and see whether the behavior is as expected. Try changing the value of the `delay(milliseconds)` function to see how the behavior of the board changes.
+    4. Once you're satisfied that the board is working, close the Arduino IDE.
+4. In Code, install the following extensions (Ctrl + Shift + X):
     1. Arduino by Microsoft
-    2. C/C++ Intellisense by Microsoft
-5. Open the VSC command palette (Ctrl + Shift + P) and search for "Arduino Examples". Use the dialogue that opens to find the Blink project again.
-6. Use the command palette to find the "Arduino Board Configuration" dialogue. Configure VSC as you configured the Arduino IDE previously.
+    2. C/C++ by Microsoft
+5. Open the Code command palette (Ctrl + Shift + P) and search for "Arduino Examples". Use the dialogue that opens to find the Blink project again, and open the Blink.ino file.
+6. Use the command palette to find the "Arduino Board Configuration" and "Select Serial Port" dialogues. Configure Code as you configured the Arduino IDE previously.
 7. Use the command palette to find the "Arduino Upload" dialogue. The upload process can also be started with the Ctrl + Alt + U keybinding.
-8. Try out the C/C++ extension by right clicking on a variable or function name, then selecting "Go to declaration" or "Go to definition". VSC should open some completely separate file. These files were installed along with the Arduino IDE.
 
-#### Independent Project Suggestions for Lesson 1
+One of the best reasons to use Code instead of the Arduino IDE is the choice of extensions offered by Code. You may have already noticed the more readable syntax highlighting, but other tools are even more valuable than that. Right now, your Blink.ino file has only two functions: `void setup()` and `void loop()`. However, the usual convention for C and C++ is to have an `int main()` function in a main.c or main.cpp file that will always start the project. So what's happening here?
+
+Right click on the `setup` portion of `void setup()` and select "Go to Declaration" from the resulting menu. This will cause Code to search for the header file where the `setup()` function was first declared. Since we used the default install locations, this file is going to be at `C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h`. By right clicking and going directly to the header file, we saved a lot of time that otherwise would have been spent searching!
+
+Next, right click on the tab at the top of the Code interface that says "Arduino.h" and select "Reveal in Explorer". This will open a new Windows explorer window in the project directory for Arduino.h. Once the window is open, type "main" and your file selector should jump down to main.cpp. Open this file and find the `int main(void)` function it contains. You should now be able to see how the `setup()` and `loop()` functions are related to each other as well as how the actual loop is managed.
+
+#### Further Activities for Lesson 1
+
+##### Configure the Local Build Environment
+
+When building your Blink.ino project, you may see the following message:
+
+```console
+[Warning] Output path is not specified. Unable to reuse previously compiled files. Upload could be slow. See README.
+```
+
+If so, you could take the following steps:
+
+1. Reveal Blink.ino in the Windows Explorer.
+2. Open the .vscode directory, and then the arduino.json file.
+3. Add the following line at the end of your .json file:
+
+    ```json
+    "output": "../build"
+    ```
+
+4. Make sure that all lines in this file except the last have a comma at the end. JSON files aren't code files, but they require specific syntax to be interpreted correctly.
+
+##### Replace a Function Call and Debug the Resulting Problems
+
+Right click on the `delay` portion of the second `delay(milliseconds)` function call and select "Go to Definition" to go to the .c or .cpp file where the function is defined. Copy the content of this function, go back to Blink.ino, delete the second call to `delay(ms)`, and replace it with the copied code snippet. Try uploading the new Blink.ino file.
+
+Even though the code from the function definition is "the same" as the function, the logic has to change slightly because the context has changed. Work through this problem on your own and compare your solution to [ours](#Lesson-1-Code-Examples) when you're done.
 
 ### Lesson 2: Digital Inputs and Outputs
 
-#### Independent Project Suggestions for Lesson 2
+#### Further Activities for Lesson 2
 
 ### Lesson 3: Analog Inputs and PWM
 
-#### Independent Project Suggestions for Lesson 3
+#### Further Activities for Lesson 3
 
 ### Lesson 4: Seven-Segment LED Display
 
-#### Independent Project Suggestions for Lesson 4
+#### Further Activities for Lesson 4
 
 ### Lesson 5: Liquid Crystal Display
 
-#### Independent Project Suggestions for Lesson 5
+#### Further Activities for Lesson 5
 
 ### Lesson 6: LCD continued
 
-#### Independent Project Suggestions for Lesson 6
+#### Further Activities for Lesson 6
 
 ### Lesson 7: Monitoring Analog Sensors with the LCD
 
-#### Independent Project Suggestions for Lesson 7
+#### Further Activities for Lesson 7
 
 ### Lesson 8: Monitoring Digital Sensors with the LCD
 
-#### Independent Project Suggestions for Lesson 8
+#### Further Activities for Lesson 8
 
 ## Miscellaneous
 
@@ -100,3 +135,21 @@ Dr. F floated the idea of building our own PCB / kit for the course, but Mr. Dug
 6) Two-line LCD display, part 2
 7) Analog sensors
 8) Digital sensors
+
+### Lesson 1 Code Examples
+
+```c
+// the loop function runs over and over again forever
+void loop() {
+  uint32_t dly_ms = 200, start = 0;
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(dly_ms);                     // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+
+  start = micros();                  // Get the system time in microseconds (us)
+  while(dly_ms * 1000 > micros() - start)
+  { /* While the delay is greater than the time passed since checking micros() */
+    yield();                         // Let the processor handle other tasks
+  }
+}
+```
