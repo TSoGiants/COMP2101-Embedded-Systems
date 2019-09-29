@@ -81,9 +81,9 @@ If so, you could take the following steps:
 
 ##### Replace a Function Call and Debug the Resulting Problems
 
-Right click on the `delay` portion of the second `delay(milliseconds)` function call and select "Go to Definition" to go to the .c or .cpp file where the function is defined. Copy the content of this function, go back to Blink.ino, delete the second call to `delay(ms)`, and replace it with the copied code snippet. Try uploading the new Blink.ino file.
+Right click on the `delay` portion of the second `delay(ms)` function call and select "Go to Definition" to go to the .c or .cpp file where the function is defined. Copy the content of this function, go back to Blink.ino, delete the second call to `delay(ms)`, and replace it with the copied code snippet. Try uploading the new Blink.ino file.
 
-Even though the code from the function definition is "the same" as the function, the logic has to change slightly because the context has changed. Work through this problem on your own. If you have time, do the same thing with the second `digitalWrite(pin, state)`. Compare your solution to [ours](#Lesson-1-Code-Examples) when you're done.
+Because the context is different, copying code from a function declaration to replace a function call will usually result in an error. Fix Blink.ino on your own by studying the source file you copied from and checking the build output for compile errors. If you have time, do the same thing with the second `digitalWrite` call. Compare your solution to [ours](#Lesson-1-Code-Examples) when you're done.
 
 ### Lesson 2: Digital Inputs and Outputs
 
