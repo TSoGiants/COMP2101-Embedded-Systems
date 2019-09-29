@@ -141,7 +141,7 @@ Dr. F floated the idea of building our own PCB / kit for the course, but Mr. Dug
 ```c
 // the loop function runs over and over again forever
 void loop() {
-  uint32_t dly_ms = 200, start = 0;
+  uint32_t dly_ms = 1000, start = 0;
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
   delay(dly_ms);                     // wait for a second
   digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
