@@ -83,7 +83,7 @@ If so, you could take the following steps:
 
 Right click on the `delay` portion of the second `delay(milliseconds)` function call and select "Go to Definition" to go to the .c or .cpp file where the function is defined. Copy the content of this function, go back to Blink.ino, delete the second call to `delay(ms)`, and replace it with the copied code snippet. Try uploading the new Blink.ino file.
 
-Even though the code from the function definition is "the same" as the function, the logic has to change slightly because the context has changed. Work through this problem on your own and compare your solution to [ours](#Lesson-1-Code-Examples) when you're done.
+Even though the code from the function definition is "the same" as the function, the logic has to change slightly because the context has changed. Work through this problem on your own. If you have time, do the same thing with the second `digitalWrite(pin, state)`. Compare your solution to [ours](#Lesson-1-Code-Examples) when you're done.
 
 ### Lesson 2: Digital Inputs and Outputs
 
@@ -140,16 +140,25 @@ Dr. F floated the idea of building our own PCB / kit for the course, but Mr. Dug
 
 ```c
 // the loop function runs over and over again forever
+#define DLY_MS (uint32_t)1000
 void loop() {
-  uint32_t dly_ms = 1000, start = 0;
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(dly_ms);                     // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+    uint32_t start;
+    uint8_t pin = LED_BUILTIN, bit;
+    volatile uint8_t *out;
 
-  start = micros();                  // Get the system time in microseconds (us)
-  while(dly_ms * 1000 > micros() - start)
-  { /* While the delay is greater than the time passed since checking micros() */
-    yield();                         // Let the processor handle other tasks
-  }
+    digitalWrite(pin, HIGH);  // turn the LED on (HIGH is the voltage level)
+    delay(DLY_MS);            // wait for the specified amount of time
+
+    out = portOutputRegister(       /* Get the address mapped to the state of the pin.      */
+          digitalPinToPort(pin)     /* For more information about our controller, see       */
+    );                              /* https://www.microchip.com/wwwproducts/en/ATMEGA328P  */
+    bit = digitalPinToBitMask(pin); // Get the position of the pin on the register
+    *out &= ~bit;                   // Set the pin's bit on the register's byte to 0
+
+    start = micros();   // Get the system time in microseconds (us)
+    while(DLY_MS * 1000 > micros() - start) 
+    { /* While the delay is greater than the time passed since checking micros() */
+        yield();        // Let the controller handle other tasks
+    }
 }
 ```
