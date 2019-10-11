@@ -16,7 +16,15 @@ Development of this course is underway; you can follow our progress alternating 
 
 * ~~Type up process of setting up Visual Studio Code and the Blink program for the lesson 1 worksheet.~~
 * ~~Evaluate available Arduino kits to find a good match for our course objectives.~~
-* ~~Complete writing lesson #1.~~
+* ~~Complete drafting lesson #1.~~
+* Complete drafting lesson #2.
+* Complete drafting lesson #3.
+* Complete drafting lesson #4.
+* Complete drafting lesson #5.
+* Complete drafting lesson #6.
+* Complete drafting lesson #7.
+* Complete drafting lesson #8.
+* Review completed lessons and example snippets, adding context and related technical information where possible.
 
 ### Dr. F
 
@@ -87,29 +95,43 @@ Because the context is different, copying code from a function declaration to re
 
 ### Lesson 2: Digital Inputs and Outputs
 
+Draft deadline: 13 October 2019
+
 #### Further Activities for Lesson 2
 
 ### Lesson 3: Analog Inputs and PWM
+
+Draft deadline: 20 October 2019
 
 #### Further Activities for Lesson 3
 
 ### Lesson 4: Seven-Segment LED Display
 
+Draft deadline: 20 October 2019
+
 #### Further Activities for Lesson 4
 
 ### Lesson 5: Liquid Crystal Display
+
+Draft deadline: 27 October 2019
 
 #### Further Activities for Lesson 5
 
 ### Lesson 6: LCD continued
 
+Draft deadline: 27 October 2019
+
 #### Further Activities for Lesson 6
 
 ### Lesson 7: Monitoring Analog Sensors with the LCD
 
+Draft deadline: 27 October 2019
+
 #### Further Activities for Lesson 7
 
 ### Lesson 8: Monitoring Digital Sensors with the LCD
+
+Draft deadline: 3 November 2019
 
 #### Further Activities for Lesson 8
 
