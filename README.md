@@ -167,22 +167,22 @@ You should now have a basic program that turns on a light while you hold down a 
 
 Most of what you need has already been demonstrated in either `Blink.ino` or `Button.ino`, but you might need more information. Here's a tip: the C language uses the several logical operators. They are very useful! It is almost impossible to use if statements in more complicated situations without understanding logical operators well. Scan through the following table to see different examples of how logical expressions are evaluated in the C language:
 
-| Expression | Evaluates As |
-|-|-|
-| `1 == 1` | `TRUE` |
-| `1 == 2` | `FALSE` |
-| `1 != 2` | `TRUE` |
-| `1 <= 2` | `TRUE` |
-| `1 > 2` | `FALSE` |
-| `TRUE == TRUE` | `TRUE` |
-| `TRUE == FALSE` | `FALSE` |
-| `TRUE != FALSE` | `TRUE` |
-| `TRUE && TRUE` | `TRUE` |
-| `TRUE && FALSE` | `FALSE` |
-| `FALSE && FALSE` | `FALSE` |
-| `TRUE \|\| TRUE` | `TRUE` |
-| `TRUE \|\| FALSE` | `TRUE` |
-| `FALSE \|\| FALSE` | `FALSE` |
+| Expression | English Equivalent | Evaluates As |
+|-|-|-|
+| `1 == 1` | 1 is equal to 1. | `TRUE` |
+| `1 == 2` | 1 is equal to 2. | `FALSE` |
+| `1 != 2` | 1 is not equal to 2. | `TRUE` |
+| `1 <= 2` | 1 is less than or equal to 2. |  `TRUE` |
+| `1 > 2` | 1 is greater than 2. | `FALSE` |
+| `TRUE == TRUE` | True is true. | `TRUE` |
+| `TRUE == FALSE` | True is false. | `FALSE` |
+| `TRUE != FALSE` | True is not false. | `TRUE` |
+| `TRUE && TRUE` | True and true. | `TRUE` |
+| `TRUE && FALSE` | True and false. | `FALSE` |
+| `FALSE && FALSE` | False and false. | `FALSE` |
+| `TRUE \|\| TRUE` | True or true. | `TRUE` |
+| `TRUE \|\| FALSE` | True or false. | `TRUE` |
+| `FALSE \|\| FALSE` | False or false. | `FALSE` |
 
 Additionally, `0` evaluates as `FALSE` and all non-zero integers evaluate as `TRUE`. If you work towards a solution for a while but are still having trouble then don't hesitate to look at `Built-in Examples > Digital > Debounce`. This example is a little more detailed than is strictly necessary for this problem, but it will definitely help you find a valid solution. Alternatively, try looking at [our](#Lesson-2-Code-Examples) solution for this problem.
 
