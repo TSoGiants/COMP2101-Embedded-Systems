@@ -16,14 +16,14 @@ Development of this course is underway; you can follow our progress alternating 
 
 * ~~Type up process of setting up Visual Studio Code and the Blink program for the lesson 1 worksheet.~~
 * ~~Evaluate available Arduino kits to find a good match for our course objectives.~~
-* ~~Complete drafting lesson #1.~~
-* Complete drafting lesson #2.
-* Complete drafting lesson #3.
-* Complete drafting lesson #4.
-* Complete drafting lesson #5.
-* Complete drafting lesson #6.
-* Complete drafting lesson #7.
-* Complete drafting lesson #8.
+* ~~Draft lesson #1.~~
+* Draft lesson #2.
+* Draft lesson #3.
+* Draft lesson #4.
+* Draft lesson #5.
+* Draft lesson #6.
+* Draft lesson #7.
+* Draft lesson #8.
 * Review completed lessons and example snippets, adding context and related technical information where possible.
 
 ### Dr. F
@@ -103,15 +103,14 @@ In this lesson, we will introduce basic components such as push buttons and ligh
 2. Examine each of the components you just removed.
     * Examine the small breadboard. It is essentially a plastic block with a bit of adhesive foam on the underside. The adhesive is good for only a few uses, especially if left in place for quite a while and then removed, but it can be used to anchor a breadboard to a surface after a circuit has been completed. This is useful for some hobby projects. Peel away a corner of the non-adhesive film from the bottom of the smaller breadboard, then peel away a corner of the foam to reveal the conductive inserts that allow solderless breadboards to conduct electricity. These inserts can be pried out from the breadboard with a pin or mechanical pencil. Once understand what breadboards are made of, undo your changes and put the small breadboard back into the box. We will not be using it much.
     * Examine the button. You will see that it has four legs, and is longer in one direction than the other. Each "side" of the button has two legs that are facing the same direction. These legs that face the same direction are electronically separated by a very large resistance, such that the flow of charge carriers between them is equal to or very close to zero. These legs are said to be in an "open circuit" state. The legs that are located directly across from and are facing away from each other are separated by a very small resistance, such that the flow of charge carriers between them is unrestricted or very close to unrestricted. These legs are said to be in a "closed circuit" or "short circuit" state. When the button is pushed, two pieces of conductor inside the button are forced to touch. This shorts the two nodes together, bypassing the large resistance and allowing charge carriers to flow freely from any of the legs to any other.
-    * Examine a single color LED. It is a transparent plastic dome mounted on two conductive metal legs, with a small wafer of material embedded in the plastic. One of the legs is noticeably shorter than the other
-    * Examine a tricolor LED. It is a transparent plastic dome mounted on four conductive metal legs, with a small wafer of material embedded in the plastic.
-3. Place one push button onto your large breadboard.
-4. We will now begin wiring our breadboard. Using your jumper wires, connect the two red rails of your breadboard together. Next, do the same with the two blue rails. By convention, the red rail is the highest voltage node ("supply") and uses red wires while the blue rail is the lowest voltage supply ("ground") and uses black wires. Staying with convention can help others understand your circuit more quickly, but is not required. Use more jumper wires to connect your supply rail to a 3.3V port of your controller board and your ground rail to a GND port of your controller board.
-5. Take one of your single color LEDs, and see that one of the legs is shorter than the other. Insert the short leg of the LED into the ground rail of our circuit board, and insert the long leg into one of the rows that has been connected to a button.
-6. Take one of your 220Ω resistors and connect it from the supply rail of your breadboard to the same row as the longer LED leg. The LED should light up! Using a smaller resistor will allow higher current, which will result in a brighter LED. Using a larger resistor will do the opposite and result in a dimmer LED. Each LED is likely to have a different level of brightness for a certain amount of current, but allowing too much current to flow through the LED will damage it very quickly. Some of your LEDs will be able to handle all of the current your controller can output, but some will burn out instead. If any of your LEDs become damaged and no longer light up, set it aside or throw it away. It cannot be repaired.
-7. Remove the resistor from the row with the LED's longer leg and instead connect it to the other leg of the button that is on the same side of the breadboard. Push the button to turn the LED back on.
-8. Remove the single color LED and put it back with the others, then find the tricolor LED.
-9. Insert the longest leg of the tricolor LED into the ground rail of the breadboard and insert the three shorter legs into rows for three different buttons. Use jumper wires to connect the buttons together in a way that leaves the LED legs isolated until the buttons are pushed, then use the 220Ω resistor to connect that node to the supply rail. Use the buttons to examine the tricolor LED's behavior.
+    * Examine a single color LED and a tricolor LED.
+        * Add explanation of charge carriers and anodes / cathodes.
+3. We will now begin wiring our breadboard. Using your jumper wires, connect the two red rails of your breadboard together. Next, do the same with the two blue rails. By convention, the red rail is the highest voltage node ("supply") and uses red wires while the blue rail is the lowest voltage supply ("ground") and uses black wires. Staying with convention can help others understand your circuit more quickly, but is not required. Use more jumper wires to connect your supply rail to a 3.3V port of your controller board and your ground rail to a GND port of your controller board.
+4. Take one of your single color LEDs, and see that one of the legs is shorter than the other. Insert the short leg of the LED into the ground rail of our circuit board, and insert the long leg into one of the rows that has been connected to a button.
+5. Take one of your 220Ω resistors and connect it from the supply rail of your breadboard to the same row as the longer LED leg. The LED should light up! Using a smaller resistor will allow higher current, which will result in a brighter LED. Using a larger resistor will do the opposite and result in a dimmer LED. Each LED is likely to have a different level of brightness for a certain amount of current, but allowing too much current to flow through the LED will damage it very quickly. Some of your LEDs will be able to handle all of the current your controller can output, but some will burn out instead. If any of your LEDs become damaged and no longer light up, set it aside or throw it away. It cannot be repaired.
+6. Remove the resistor from the row with the LED's longer leg and instead connect it to the other leg of the button that is on the same side of the breadboard. Push the button to turn the LED back on.
+7. Remove the single color LED and put it back with the others, then find the tricolor LED.
+8. Insert the longest leg of the tricolor LED into the ground rail of the breadboard and insert the three shorter legs into rows for three different buttons. Use jumper wires to connect the buttons together in a way that leaves the LED legs isolated until the buttons are pushed, then use the 220Ω resistor to connect that node to the supply rail. Use the buttons to examine the tricolor LED's behavior.
 
 We have finished examining the behavior of our equipment - it's time to start our next firmware project.
 
@@ -143,6 +142,8 @@ You should now have a basic program that turns on a light while you hold down a 
 4. Debug the code until the LED has the correct behavior. The tricolor LED should change color exactly once per button press no matter how long the button is held down, and pressing the button repeatedly should cycle the LED through these four states: green, red, blue, and off. The order doesn't really matter, but it shouldn't change between cycles.
 
 Most of what you need has already been demonstrated in either `Blink.ino` or `Button.ino`, but you might need more information. Here's a tip: the C language uses the several logical operators. They are very useful! It is almost impossible to use if statements in more complicated situations without understanding logical operators well. Scan through the following table to see different examples of how logical expressions are evaluated in the C language.
+
+* Add explanation of operator precedence. Add second table?
 
 | Expression | Evaluates As |
 |-|-|
