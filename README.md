@@ -16,29 +16,46 @@ Development of this course is underway; you can follow our progress alternating 
 
 * ~~Type up process of setting up Visual Studio Code and the Blink program for the lesson 1 worksheet.~~
 * ~~Evaluate available Arduino kits to find a good match for our course objectives.~~
+* Pull educational information to the front of each lesson.
 * ~~Draft lesson #1.~~
-* Draft lesson #2.
+* ~~Draft lesson #2.~~
 * Draft lesson #3.
 * Draft lesson #4.
 * Draft lesson #5.
 * Draft lesson #6.
 * Draft lesson #7.
 * Draft lesson #8.
-* Review completed lessons and example snippets, adding context and related technical information where possible.
+* Review completed lessons, example code snippets. Add context and related technical information when useful.
 
 ### Dr. F
 
 * Write up an introduction to microcontrollers based on the previously written slide deck.
 * Still needs to write up an introduction to microcontrollers based on the previously written slide deck.
 * Finish introduction to microcontrollers, purchase Elegoo kit, and begin writing lesson #2 based off the SBEE embedded systems worksheets.
+* Review completed lessons, example code snippets. Add context and related technical information when useful.
 
 ## Project Scope
 
 The focus of this course is to teach students how to work with microcontrollers such as the AVR architecture microcontrollers found in Arduino devices. Students who have completed this course should understand the basics of microcontroller architecture and be able to create simple, practical software in a professional programming environment.
 
+## Topics Covered
+
+* [Lesson 1](#Lesson-1): Development environments, data types, variable addresses and values, compiler keywords.
+* [Lesson 2](#Lesson-2): Wiring, nodes, currents & charge carriers, anodes & cathodes, digital inputs & outputs, if statements & logical expressions.
+* [Lesson 3](#Lesson-3): Analog-digital conversion, pulse width modulation
+* [Lesson 4](#Lesson-4): No topics explained. New components & project work.
+* [Lesson 5](#Lesson-5): No topics explained. New components & project work.
+* [Lesson 6](#Lesson-6): Nothing new - continuing work on lesson 5's project
+* [Lesson 7](#Lesson-7): No topics explained. New components & project work.
+* [Lesson 8](#Lesson-8): No topics explained. New components & project work.
+
+## Topics Yet to Be Explained
+
+* Preprocessor macros, compilation process, architecture
+
 ### Lesson 1: General Introduction and Setup
 
-In this lesson, we will prepare a helpful development environment and compile our first project. This will include minimally technical explanations of memory addresses, volatile and non-volatile memory, and data types and modifiers.
+In this lesson, we will prepare a helpful development environment and compile our first project. This will include explanations of variable types, variable addresses, and compiler keywords.
 
 1. [Install](https://www.arduino.cc/en/Main/Software) the Arduino IDE and associated support files.
     1. Get the Windows installer instead of the .zip file or the app.
@@ -52,20 +69,24 @@ In this lesson, we will prepare a helpful development environment and compile ou
 3. Before making any changes or doing anything too interesting, make sure that your Arduino board works with the Arduino IDE.
     1. Open the Arduino IDE and load the "Blink.ino" example sketch (File > Examples > Basics > Blink).
     2. Update your build environment to match your specific hardware and active port (Tools > Board and Tools > Port). We are going to be using the Genuino Uno for these projects.
-    3. Upload the sketch (Ctrl + u) to the board and see whether the behavior is as expected. Try changing the value of the `delay(milliseconds)` function to see how the behavior of the board changes.
+    3. Upload the sketch (`Ctrl + U`) to the board and see whether the behavior is as expected. Try changing the value of the `delay(milliseconds)` function to see how the behavior of the board changes.
     4. Once you're satisfied that the board is working, close the Arduino IDE.
-4. In Code, install the following extensions (Ctrl + Shift + X):
+4. In Code, install the following extensions (`Ctrl + Shift + X`):
     1. Arduino by Microsoft
     2. C/C++ by Microsoft
-5. Open the Code command palette (Ctrl + Shift + P) and search for "Arduino Examples". Use the dialogue that opens to find the Blink project again, and open the Blink.ino file.
+5. Open the Code command palette (`Ctrl + Shift + P`) and search for "Arduino Examples". Use the dialogue that opens to find the Blink project again, and open the Blink.ino file.
 6. Use the command palette to find the "Arduino Board Configuration" and "Select Serial Port" dialogues. Configure Code as you configured the Arduino IDE previously.
-7. Use the command palette to find the "Arduino Upload" dialogue. The upload process can also be started with the Ctrl + Alt + U keybinding.
+7. Use the command palette to find the "Arduino Upload" dialogue. The upload process can also be started with the `Ctrl + Alt + U` keybinding.
 
 One of the best reasons to use Code instead of the Arduino IDE is the choice of extensions offered by Code. You may have already noticed the more readable syntax highlighting, but other tools are even more valuable than that. Right now, your Blink.ino file has only two functions: `void setup()` and `void loop()`. However, the usual convention for C and C++ is to have an `int main()` function in a main.c or main.cpp file that will always start the project. So what's happening here?
 
 Right click on the `setup` portion of `void setup()` and select "Go to Declaration" from the resulting menu. This will cause Code to search for the header file where the `setup()` function was first declared. Since we used the default install locations, this file is going to be at `C:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h`. By right clicking and going directly to the header file, we saved a lot of time that otherwise would have been spent searching!
 
-Next, right click on the tab at the top of the Code interface that says "Arduino.h" and select "Reveal in Explorer". This will open a new Windows explorer window in the project directory for Arduino.h. Once the window is open, type "main" and your file selector should jump down to main.cpp. Open this file and find the `int main(void)` function it contains. You should now be able to see how the `setup()` and `loop()` functions are related to each other as well as how the actual loop is managed.
+Next, right click on the tab at the top of the Code interface that says "Arduino.h" and select "Reveal in Explorer". This will open a new Windows explorer window in the project directory for Arduino.h. Once the window is open, type "main" and your file selector should jump to main.cpp. Open this file and find the `int main(void)` function it contains. You should now be able to see how the `setup()` and `loop()` functions are related to each other as well as how the actual loop is managed.
+
+* Explain variable types: char, int, float, double, void.
+
+* Explain other keywords: auto, break, case, const, continue, default, do, else, enum, extern, for, goto, if, long, register, return, short, signed, sizeof, static, struct, switch, typedef, union, unsigned, volatile, while.
 
 #### More Exercises Related to Lesson 1
 
@@ -103,8 +124,11 @@ In this lesson, we will introduce basic components such as push buttons and ligh
 2. Examine each of the components you just removed.
     * Examine the small breadboard. It is essentially a plastic block with a bit of adhesive foam on the underside. The adhesive is good for only a few uses, especially if left in place for quite a while and then removed, but it can be used to anchor a breadboard to a surface after a circuit has been completed. This is useful for some hobby projects. Peel away a corner of the non-adhesive film from the bottom of the smaller breadboard, then peel away a corner of the foam to reveal the conductive inserts that allow solderless breadboards to conduct electricity. These inserts can be pried out from the breadboard with a pin or mechanical pencil. Once understand what breadboards are made of, undo your changes and put the small breadboard back into the box. We will not be using it much.
     * Examine the button. You will see that it has four legs, and is longer in one direction than the other. Each "side" of the button has two legs that are facing the same direction. These legs that face the same direction are electronically separated by a very large resistance, such that the flow of charge carriers between them is equal to or very close to zero. These legs are said to be in an "open circuit" state. The legs that are located directly across from and are facing away from each other are separated by a very small resistance, such that the flow of charge carriers between them is unrestricted or very close to unrestricted. These legs are said to be in a "closed circuit" or "short circuit" state. When the button is pushed, two pieces of conductor inside the button are forced to touch. This shorts the two nodes together, bypassing the large resistance and allowing charge carriers to flow freely from any of the legs to any other.
+        * Do a better job explaining "nodes".
+        * Do a better job explaining "resistance".
     * Examine a single color LED and a tricolor LED.
-        * Add explanation of charge carriers and anodes / cathodes.
+        * Discuss semiconductor materials.
+        * Explain charge carriers and anodes / cathodes.
 3. We will now begin wiring our breadboard. Using your jumper wires, connect the two red rails of your breadboard together. Next, do the same with the two blue rails. By convention, the red rail is the highest voltage node ("supply") and uses red wires while the blue rail is the lowest voltage supply ("ground") and uses black wires. Staying with convention can help others understand your circuit more quickly, but is not required. Use more jumper wires to connect your supply rail to a 3.3V port of your controller board and your ground rail to a GND port of your controller board.
 4. Take one of your single color LEDs, and see that one of the legs is shorter than the other. Insert the short leg of the LED into the ground rail of our circuit board, and insert the long leg into one of the rows that has been connected to a button.
 5. Take one of your 220Ω resistors and connect it from the supply rail of your breadboard to the same row as the longer LED leg. The LED should light up! Using a smaller resistor will allow higher current, which will result in a brighter LED. Using a larger resistor will do the opposite and result in a dimmer LED. Each LED is likely to have a different level of brightness for a certain amount of current, but allowing too much current to flow through the LED will damage it very quickly. Some of your LEDs will be able to handle all of the current your controller can output, but some will burn out instead. If any of your LEDs become damaged and no longer light up, set it aside or throw it away. It cannot be repaired.
@@ -141,9 +165,7 @@ You should now have a basic program that turns on a light while you hold down a 
 3. Update `Button.ino` to use pins 10, 11, and 12 instead of 13 as outputs for the LED.
 4. Debug the code until the LED has the correct behavior. The tricolor LED should change color exactly once per button press no matter how long the button is held down, and pressing the button repeatedly should cycle the LED through these four states: green, red, blue, and off. The order doesn't really matter, but it shouldn't change between cycles.
 
-Most of what you need has already been demonstrated in either `Blink.ino` or `Button.ino`, but you might need more information. Here's a tip: the C language uses the several logical operators. They are very useful! It is almost impossible to use if statements in more complicated situations without understanding logical operators well. Scan through the following table to see different examples of how logical expressions are evaluated in the C language.
-
-* Add explanation of operator precedence. Add second table?
+Most of what you need has already been demonstrated in either `Blink.ino` or `Button.ino`, but you might need more information. Here's a tip: the C language uses the several logical operators. They are very useful! It is almost impossible to use if statements in more complicated situations without understanding logical operators well. Scan through the following table to see different examples of how logical expressions are evaluated in the C language:
 
 | Expression | Evaluates As |
 |-|-|
@@ -158,15 +180,17 @@ Most of what you need has already been demonstrated in either `Blink.ino` or `Bu
 | `TRUE && TRUE` | `TRUE` |
 | `TRUE && FALSE` | `FALSE` |
 | `FALSE && FALSE` | `FALSE` |
-| `TRUE || TRUE` | `TRUE` |
-| `TRUE || FALSE` | `TRUE` |
-| `FALSE || FALSE` | `FALSE` |
+| `TRUE \|\| TRUE` | `TRUE` |
+| `TRUE \|\| FALSE` | `TRUE` |
+| `FALSE \|\| FALSE` | `FALSE` |
 
-Additionally, `0` evaluates as `FALSE` and all non-zero integers evaluate as `TRUE`. If you work towards a solution for a while but are still having trouble then don't hesitate to look at `Built-in Examples > Digital > Debounce`. This example is a little more detailed than is strictly necessary for this problem, but it will definitely help you find a valid solution.
+Additionally, `0` evaluates as `FALSE` and all non-zero integers evaluate as `TRUE`. If you work towards a solution for a while but are still having trouble then don't hesitate to look at `Built-in Examples > Digital > Debounce`. This example is a little more detailed than is strictly necessary for this problem, but it will definitely help you find a valid solution. Alternatively, try looking at [our](#Lesson-2-Code-Examples) solution for this problem.
+
+* Add explanation of operator precedence. Second table?
 
 #### More Exercises Related to Lesson 2
 
-### Lesson 3: Introduction to Analog-Digital Conversion (ADC), Pulse Width Modulation (PWM) and True Analog Outputs
+### Lesson 3: Introduction to Analog-Digital Conversion (ADC) and Pulse Width Modulation (PWM)
 
 Draft deadline: 20 October 2019
 
@@ -228,24 +252,28 @@ Dr. F floated the idea of building our own PCB / kit for the course, but Mr. Dug
 ### Lesson 1 Code Examples
 
 ```c
-// the loop function runs over and over again forever
-#define DLY_MS (uint32_t)1000
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+const uint32_t dly_ms = 1000;
+
 void loop() {
     uint32_t start;
     uint8_t pin = LED_BUILTIN, bit;
     volatile uint8_t *out;
 
     digitalWrite(pin, HIGH);  // turn the LED on (HIGH is the voltage level)
-    delay(DLY_MS);            // wait for the specified amount of time
+    delay(dly_ms);            // wait for the specified amount of time
 
     out = portOutputRegister(       /* Get the address mapped to the state of the pin.      */
           digitalPinToPort(pin)     /* For more information about our controller, see       */
     );                              /* https://www.microchip.com/wwwproducts/en/ATMEGA328P  */
     bit = digitalPinToBitMask(pin); // Get the position of the pin on the register
-    *out &= ~bit;                   // Set the pin's bit on the register's byte to 0
+    *out &= ~bit;                   // Set the pin's bit on the register to 0
 
     start = micros();   // Get the system time in microseconds (us)
-    while(DLY_MS * 1000 > micros() - start) 
+    while(dly_ms * 1000 > micros() - start)
     { /* While the delay is greater than the time passed since checking micros() */
         yield();        // Let the controller handle other tasks
     }
@@ -253,3 +281,63 @@ void loop() {
 ```
 
 ### Lesson 2 Code Examples
+
+Here's one solution for the tricolor LED problem:
+
+```c
+// Constant variables used by setup() and loop()
+const int buttonPin = 2;
+const int led_a =  12;
+const int led_b =  11;
+const int led_c =  10;
+
+void setup() {
+  pinMode(led_a,      OUTPUT);
+  pinMode(led_b,      OUTPUT);
+  pinMode(led_c,      OUTPUT);
+  pinMode(buttonPin,  INPUT);
+}
+
+// State variables used by loop() only
+int btn_read = 0;
+int last_btn = 0;
+int led_state = 0;
+
+void loop() {
+  // Sample the state of the button once every 100 ms
+  delay(100);
+  last_btn = btn_read;
+  btn_read = digitalRead(buttonPin);
+  if (btn_read == HIGH && last_btn == LOW) {
+    // The button has been pushed - update the LED's color
+    if (led_state == 0)
+    {
+      digitalWrite(led_a, HIGH);
+      digitalWrite(led_b, LOW);
+      digitalWrite(led_c, LOW);
+      led_state++;
+    }
+    else if(led_state == 1)
+    {
+      digitalWrite(led_a, LOW);
+      digitalWrite(led_b, HIGH);
+      digitalWrite(led_c, LOW);
+      led_state++;
+    }
+    else if(led_state == 2)
+    {
+      digitalWrite(led_a, LOW);
+      digitalWrite(led_b, LOW);
+      digitalWrite(led_c, HIGH);
+      led_state++;
+    }
+    else
+    {
+      digitalWrite(led_a, LOW);
+      digitalWrite(led_b, LOW);
+      digitalWrite(led_c, LOW);
+      led_state = 0;
+    }
+  }
+}
+```
